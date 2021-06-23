@@ -1,27 +1,34 @@
 <template>
   <div id="app">
-    <ListPersons msg="Welcome to Your Vue.js App" />
+    <Header />
+    <router-view></router-view>    
+    <Footer />
   </div>
 </template>
 
 <script>
-import ListPersons from "./components/ListPersons.vue";
-
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 export default {
   name: "App",
   components: {
-    ListPersons,
+    Header,
+    Footer,
   },
 };
 </script>
 
 <style>
-body{
+*{
+box-sizing: border-box;
+}
+body {
   margin: 0;
   font-family: sans-serif;
-  padding: 0;
-  box-sizing: border-box;
+  padding: 0;  
   font-size: 20px;
+  background-color: rgb(87, 87, 187);
+  overflow: hidden;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -29,5 +36,6 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  width: 100vw;
 }
 </style>
